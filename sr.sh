@@ -5,7 +5,7 @@ SERVER_IP=$(ip -4 addr | grep -oP '(?<=inet\s)10\.168\.\d+\.100' | head -n 1)
 
 # 如果没有找到匹配的IP，则退出脚本
 if [ -z "$SERVER_IP" ]; then
-  echo "No appropriate IP address found."
+  echo "没有找到10.168.*.100，请检查ip是否合规"
   exit 1
 fi
 
