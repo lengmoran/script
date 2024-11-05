@@ -30,7 +30,7 @@ git clone -b feature/stroke git@e.coding.net:xuzhishi/xmp/deploy.git
 
 # 5. 安装依赖并设置权限
 cd ~/deploy || exit
-apt install -y make
+sudo apt install -y make
 chmod -R 775 *
 make install
 
