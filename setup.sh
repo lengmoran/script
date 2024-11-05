@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo -v
 # 1. 创建 id_coding_team 私钥文件
 mkdir -p ~/.ssh
 cat <<EOL > ~/.ssh/id_coding_team
