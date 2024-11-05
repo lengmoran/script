@@ -1,0 +1,5 @@
+Host e.coding.net
+  User git
+  IdentityFile ~/.ssh/id_coding_team
+  PreferredAuthentications publickey
+  IdentitiesOnly yes
