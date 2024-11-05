@@ -25,11 +25,11 @@ EOL
 chmod 0600 ~/.ssh/id_coding_team
 
 # 4. 克隆 git 仓库
-cd ~/deply || exit
+cd ~ || exit
 git clone -b feature/stroke git@e.coding.net:xuzhishi/xmp/deploy.git
 
 # 5. 安装依赖并设置权限
-cd ~/deply || exit
+cd ~/deploy || exit
 apt install -y make
 chmod -R 775 *
 make install
