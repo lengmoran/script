@@ -1,7 +1,7 @@
 #!/bin/bash
 # 1. 创建 id_coding_team 私钥文件
-mkdir -p ~/.ssh
-cat <<EOL > ~/.ssh/id_coding_team
+mkdir -p /home/xzs/.ssh
+cat <<EOL > /home/xzs/.ssh/id_coding_team
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
 QyNTUxOQAAACCl3A2KMFKIb1GniUalxUHJZF2QdG3erhjFzXI6htDfxgAAAJg9vhPLPb4T
@@ -12,23 +12,23 @@ XZB0bd6uGMXNcjqG0N/GAAAAEmNhb2x1QHh1emhpc2hpLmNvbQECAw==
 EOL
 
 # 2. 创建 config 配置文件
-cat <<EOL > ~/.ssh/config
+cat <<EOL > /home/xzs/.ssh/config
 Host e.coding.net
   User git
-  IdentityFile ~/.ssh/id_coding_team
+  IdentityFile /home/xzs/.ssh/id_coding_team
   PreferredAuthentications publickey
   IdentitiesOnly yes
 EOL
 
 # 3. 设置文件权限
-chmod 0600 ~/.ssh/id_coding_team
+chmod 0600 /home/xzs/.ssh/id_coding_team
 
 # 4. 克隆 git 仓库
-cd ~ || exit
+cd /home/xzs || exit
 git clone -b feature/stroke git@e.coding.net:xuzhishi/xmp/deploy.git
 
 # 5. 安装依赖并设置权限
-cd ~/deploy || exit
+cd /home/xzs/deploy || exit
 sudo apt install -y make
 chmod -R 775 *
 make install
